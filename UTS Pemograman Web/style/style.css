@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+:root {
+  --primaryTextColor: rgb(0, 0, 0);
+  --secondaryTextColor: rgb(255, 255, 255);
+
+  --borderColor: rgb(7, 143, 120);
+  --LineColor: rgb(74, 75, 75);
+
+  --primaryBackgroundColor: rgb(117, 117, 117);
+  --secondaryBackgroundColor: rgb(131, 130, 130);
+  --thirdBackgroundColor: rgb(107, 105, 105);
+
+  --primaryIconcolor: rgb(255, 255, 255);
+  --primaryIconColorHover: rgb(77, 75, 75);
+
+  --sectionPadding: 100px 0;
+
+  --itemBorderRadius: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: var(--primaryBackgroundColor);
+}
+
+body {
+  font-family: Playfair Display, Inconsolata;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primaryTextColor);
+}
+
+p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+p,
+label,
+input,
+textarea,
+li {
+  color: var(--secondaryTextColor);
+}
+
+a {
+  text-decoration: none; /*untuk ilangin garis bawah yang ada di text */
+}
+
+.main-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*pengaturan navigasi*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 25px;
+  background-color: rgb(190, 189, 189);
+  position: fixed;
+  width: 100%;
+}
+
+.nav ul {
+  list-style: none; /*ini digunakan untuk menghilangkan titik2 yang membentuk list, dengan 'none' ngebuat jadi (ga bentuk list)*/
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 50px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.logo a {
+  color: red;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--primaryTextColor);
+}
+
+/*pengaturan burger nya*/
+.burger div {
+  width: 20px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  margin: 10px;
+  transition: all 0.1s;
+  z-index: 99;
+}
+
+.burger {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+/*layout*/
+.grid-3 {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+/*auto-fit(berfungsi untuk agar kolom tidak expend, jika ada ruang disisinya maka dia akan melebar ke bagian tsb, untuk mengisinya ), kemudian untuk minmax(untuk mengatur minimal dan maximalnya, misal 250px dibakal kewah gitu, biasanya untuk ukuran kecil)*/
+/*jadi 'grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));' intinya buat ngecheat biar ga satu2*/
+
+/*pengaturan desdiri*/
+#desdiri {
+  height: 720px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr; /*'fr' itu artinya fraction, fungsinya untuk bagi kolom biar sama lebarnya */
+} /*pengaturan bagian desdiri(face)*/
+
+.desdiri-left {
+  font-size: 50px;
+  font-weight: 600;
+  margin: 20px 0 16px;
+  width: 80%;
+  padding-left: 70px;
+}
+
+.desdiri-right img {
+  width: 60%;
+}
+
+.desdiri-right {
+  display: flex;
+  justify-content: center;
+}
+
+/*Pengaturan service nya*/
+#service {
+  background-color: var(--secondaryBackgroundColor);
+  padding: var(--sectionPadding);
+}
+
+.my-service {
+  text-align: center;
+  font-size: 30px;
+  margin: 16px 0 60px;
+}
+
+.services {
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: var(--itemBorderRadius);
+  background-color: var(--primaryBackgroundColor);
+}
+
+.services h4 {
+  margin: 25px 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.service-icon {
+  background-color: var(--thirdBackgroundColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-radius: 10px;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconcolor);
+}
+
+#skills {
+  padding: var(--sectionPadding);
+  width: 100%;
+  justify-content: center;
+  background-color: var(--primaryBackgroundColor);
+}
+
+.my-skills {
+  text-align: center;
+  font-size: 30px;
+  margin: 16px 0 60px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 300px;
+}
+
+.list-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.desk-skills ul {
+  line-height: 30px;
+  padding: 0 40px;
+}
+
+.desk-skills p {
+  font-size: 20px;
+  padding: 16px;
+  align-items: center;
+}
+
+.skills h1 {
+  padding: 20px;
+}
+
+/*bagian kontak*/
+#contact-me {
+  padding: var(--sectionPadding);
+}
+
+.contact-me {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+}
+
+.contact-form div {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 20px;
+  font-family: Playfair Display, Inconsolata;
+  background-color: var(--secondaryBackgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 3px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: azure;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #7d7d7d;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: var(--primaryIconcolor);
+  color: rgb(161, 161, 161);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background: var(--primaryIconColorHover);
+}
+
+.contact-items-icon {
+  background-color: var(--thirdBackgroundColor);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-items-icon svg {
+  fill: var(--primaryIconcolor);
+}
+
+.contact-items-detail h4 {
+  margin-bottom: 10px;
+}
+
+/*bagian footer/copyright*/
+footer {
+  padding: 50px 0;
+  background-color: var(--secondaryBackgroundColor);
+  text-align: center;
+}
+
+.footer-icons {
+  margin-buttom: 16px;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+}
+
+.footer-icons svg {
+  fill: #3e3e3e;
+}
+
+.footer-icons a:hover svg {
+  fill: black;
+}
